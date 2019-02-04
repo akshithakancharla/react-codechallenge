@@ -17,7 +17,7 @@ class FactoryDetailsPage extends React.Component {
         // }
 
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div>
             <Link to="/home">Home</Link>
                 <h2>Hi {user.first_name} {user.last_name}!</h2>
                 {singleFactory.loading && <em>Loading Factory details...</em>}
@@ -27,9 +27,12 @@ class FactoryDetailsPage extends React.Component {
                 {singleFactory && singleFactory.items && singleFactory.items.employee_count && <h4>EMP COUNT: {singleFactory.items.employee_count}</h4>}
                 {singleFactory && singleFactory.items && singleFactory.items.local_name && <h4>LOCAL NAME: {singleFactory.items.local_name}</h4>}
 
-                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.fire_building_safety && <h4>FIRE BUILDING SAFETY:</h4>}
+                <div className="row">
+                <div className="ccol-sm-6 col-md-6">
+                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.fire_building_safety && <h4 className="text-center">FIRE BUILDING SAFETY:</h4>}
                 {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.fire_building_safety && 
-                <table className="table table-hover">
+                
+                <table className="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -55,10 +58,11 @@ class FactoryDetailsPage extends React.Component {
                         </tr>
                     </tbody>
                 </table> }
-
-                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.health_safety && <h4>HEALTH  SAFETY:</h4>}
+                </div>
+                <div className="col-sm-6 col-md-6">
+                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.health_safety && <h4 className="text-center">HEALTH  SAFETY:</h4>}
                 {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.health_safety && 
-                <table className="table table-hover">
+                <table className="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -84,10 +88,14 @@ class FactoryDetailsPage extends React.Component {
                         </tr>
                     </tbody>
                 </table> }
-
-                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_dialogue && <h4>WORKPLACE DIALOGUE:</h4>}
+                </div>
+                </div>
+                
+                <div className="row">
+                <div className="ccol-sm-6 col-md-6">
+                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_dialogue && <h4 className="text-center">WORKPLACE DIALOGUE:</h4>}
                 {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_dialogue && 
-                <table className="table table-hover">
+                <table className="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -113,11 +121,12 @@ class FactoryDetailsPage extends React.Component {
                         </tr>
                     </tbody>
                 </table> }
+                </div>
 
-
-                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_policies && <h4>WORKPLACE POLICIES:</h4>}
+                <div className="ccol-sm-6 col-md-6">
+                {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_policies && <h4 className="text-center">WORKPLACE POLICIES:</h4>}
                 {singleFactory && singleFactory.items && singleFactory.items.statistics && singleFactory.items.statistics.workplace_policies && 
-                <table className="table table-hover">
+                <table className="table table-hover table-bordered">
                     <thead>
                         <tr>
                             <th></th>
@@ -143,6 +152,8 @@ class FactoryDetailsPage extends React.Component {
                         </tr>
                     </tbody>
                 </table> }
+                </div>
+                </div>
 
                 
                 <p>
